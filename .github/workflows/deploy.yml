@@ -10,7 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: Dump GitHub context
-       run: |
-          echo "========== list modified files ============"
-          git diff --name-only HEAD^ HEAD
+       run: git diff --name-only HEAD^ HEAD
   
