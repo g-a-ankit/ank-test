@@ -11,6 +11,8 @@ jobs:
     steps:
      - name: checkout code
        uses: actions/checkout@v2
+       with:
+         fetch-depth: 2
        
      - name: Dump GitHub context
        run: git diff --name-only HEAD~1 HEAD
