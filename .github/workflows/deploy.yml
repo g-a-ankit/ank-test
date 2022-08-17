@@ -13,7 +13,7 @@ jobs:
        run: echo '::set-output name=SELECTED_COLOR::${{secrets.TEST_SECRET}}'
        id: random-color-generator
      - name: Get color
-       if: steps.random-color-generator.outputs.SELECTED_COLOR == 'red'
+       if: secrets.TEST_SECRET == 'red'
        run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
 
   
