@@ -18,4 +18,5 @@ jobs:
        run: |
           echo  ${{secrets.TEST_SECRET}} > test.txt
           cat test.txt
+          echo test
   
