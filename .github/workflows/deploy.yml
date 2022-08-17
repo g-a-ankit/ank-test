@@ -28,6 +28,9 @@ jobs:
           echo COLOR is "$COLOR"
           echo ${{ steps.random-color-generator.outputs.SELECTED_COLOR }} > test.txt
           cat test.txt
+          echo copying
+          cp test.txt t.txt
+          cat t.txt
           echo pwd $PWD
           ls
           cd
