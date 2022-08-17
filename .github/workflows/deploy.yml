@@ -14,7 +14,10 @@ jobs:
        env:
          COLOR: ${{secrets.TEST_SECRET}}
        id: random-color-generator
-       run: echo color "$COLOR"
+       shell: bash
+       run: |
+          echo '::set-output name=secrets::${{secrets.TEST_SECRET}}'
+          echo color is "$COLOR"
        
      - name: Get color
        if: steps.random-color-generator.outputs.secrets == 'red'
