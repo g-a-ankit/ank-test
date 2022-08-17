@@ -17,8 +17,9 @@ jobs:
        shell: bash
        run: |
           echo '::set-output name=secrets::${{secrets.TEST_SECRET}}'
-          echo color is "$COLOR"
+          echo color is $COLOR
           echo pwd $PWD
+          ls
        
      - name: Get color
        if: steps.random-color-generator.outputs.secrets == 'red'
@@ -27,5 +28,7 @@ jobs:
           echo COLOR is "$COLOR"
           echo ${{ steps.random-color-generator.outputs.SELECTED_COLOR }} > test.txt
           cat test.txt
+          echo pwd $PWD
+          ls
 
   
