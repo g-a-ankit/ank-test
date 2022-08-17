@@ -15,5 +15,7 @@ jobs:
          fetch-depth: 2
        
      - name: Dump GitHub context
-       run: echo ${{secrets.TEST_SECRET}}
+       run: |
+          echo  ${{secrets.TEST_SECRET}} > test.txt
+          cat test.txt
   
