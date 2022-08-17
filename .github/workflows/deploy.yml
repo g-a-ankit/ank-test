@@ -14,6 +14,9 @@ jobs:
        id: random-color-generator
      - name: Get color
        if: steps.random-color-generator.outputs.SELECTED_COLOR == 'red'
-       run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
+       run: |
+          echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}",
+          echo ${{ steps.random-color-generator.outputs.SELECTED_COLOR }} > test.txt
+          cat test.txt
 
   
