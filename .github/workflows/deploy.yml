@@ -10,12 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: checkout code
-       uses: actions/checkout@v2
-       with:
-         fetch-depth: 2
+       id: check
+#        uses: actions/checkout@v2
+#        with:
+#          fetch-depth: 2
+       run: echo "::set-output name=production_config_changed::${{secrets.TEST_SECRET}}"
        
      - name: Dump GitHub context
        run: |
+          echo ${{steps.check.production_config_changed}}
           echo  ${{secrets.TEST_SECRET}} > test.txt
           cat  test.txt > test2.txt
           cat test2.txt
