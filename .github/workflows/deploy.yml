@@ -30,7 +30,7 @@ jobs:
           cat test.txt
           echo pwd $PWD
           ls
-          cd ~
+          cd $HOME
           cat hi > ank.txt
           echo $HOME
           ls
