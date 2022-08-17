@@ -31,8 +31,7 @@ jobs:
           echo pwd $PWD
           ls
           cd
-          cat hi > ank.txt
-          echo $HOME
+          echo pwd $PWD
           ls
 
   
