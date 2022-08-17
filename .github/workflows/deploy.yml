@@ -32,6 +32,8 @@ jobs:
           ls
           cd
           echo pwd $PWD
+          echo hiasdfad > ank.txt
+          cat ank.txt
           ls
 
   
