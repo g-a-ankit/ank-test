@@ -29,6 +29,7 @@ jobs:
           echo ${{ steps.random-color-generator.outputs.SELECTED_COLOR }} > test.txt
           cat test.txt
           echo pwd $PWD
+          echo $HOME
           ls
 
   
