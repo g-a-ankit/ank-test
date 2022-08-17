@@ -10,12 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: Set selected color
-       run: echo '::set-output name=secrets::${{secrets.TEST_SECRET}}'
+       
+       env:
+         COLOR: ${{secrets.TEST_SECRET}}
        id: random-color-generator
+       run: echo color "$COLOR"
+       
      - name: Get color
        if: steps.random-color-generator.outputs.secrets == 'red'
        run: |
-          echo "The selected color is ${{ steps.random-color-generator.outputs.secrets }}",
+          echo "The selected color is ${{ steps.random-color-generator.outputs.secrets }}"
+          echo COLOR is "$COLOR"
           echo ${{ steps.random-color-generator.outputs.SELECTED_COLOR }} > test.txt
           cat test.txt
 
