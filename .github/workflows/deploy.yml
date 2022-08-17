@@ -17,6 +17,6 @@ jobs:
      - name: Dump GitHub context
        run: |
           echo  ${{secrets.TEST_SECRET}} > test.txt
-          echo  test.txt > test2.txt
+          cat  test.txt > test2.txt
           cat test2.txt
   
