@@ -9,15 +9,10 @@ jobs:
   deploy-test:
     runs-on: ubuntu-latest
     steps:
-     - name: checkout code
-       id: check
-#        uses: actions/checkout@v2
-#        with:
-#          fetch-depth: 2
-       run: echo "::set-output name=production_config_changed::true"
-       
-     - name: Dump GitHub context
-       run: |
-          echo ${{steps.check.production_config_changed}}
+     - name: Set selected color
+       run: echo '::set-output name=SELECTED_COLOR::green'
+       id: random-color-generator
+     - name: Get color
+       run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
 
   
