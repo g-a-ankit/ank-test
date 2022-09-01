@@ -18,7 +18,7 @@ jobs:
        shell: bash
        run: |
           echo '::set-output name=secrets::${{secrets.TEST_SECRET}}'
-          echo color is $COLOR
+          'echo color is $COLOR'
           echo pwd $PWD
           ls
        
