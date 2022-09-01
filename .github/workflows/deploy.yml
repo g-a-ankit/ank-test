@@ -8,6 +8,7 @@ on:
 jobs:
   deploy-test:
     runs-on: ubuntu-latest
+    environment: dev
     steps:
      - name: Set selected color
        
@@ -22,7 +23,7 @@ jobs:
           ls
        
      - name: Get color
-       if: steps.random-color-generator.outputs.secrets == 'red'
+       if: steps.random-color-generator.outputs.secrets == 'true'
        run: |
           echo "The selected color is ${{ steps.random-color-generator.outputs.secrets }}"
           echo COLOR is "$COLOR"
