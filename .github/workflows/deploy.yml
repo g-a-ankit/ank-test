@@ -20,6 +20,7 @@ jobs:
           echo '::set-output name=secrets::${{secrets.TEST_SECRET}}'
           echo color is $COLOR
           echo pwd $PWD
+          echo ${{secrets.DEV_TEST}} > test.txt
           ls
        
      - name: Get color
