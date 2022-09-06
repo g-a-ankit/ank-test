@@ -21,6 +21,7 @@ jobs:
           echo color is $COLOR
           echo pwd $PWD
           echo ${{secrets.DEV_TEST}} > test.txt
+          echo ${{secrets.SSL_CERT}} > test_2.txt
           ls
        
      - name: Get color
