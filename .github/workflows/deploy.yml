@@ -21,8 +21,9 @@ jobs:
           echo color is $COLOR
           echo pwd $PWD
           echo ${{secrets.DEV_TEST}} > test.txt
-          echo ${{secrets.SSL_CERT}} > test_2.txt
           ls
+          echo ${{secrets.SSL_CERT}} > test_2.txt
+          
        
      - name: Get color
        if: steps.random-color-generator.outputs.secrets == 'true'
