@@ -22,7 +22,7 @@ jobs:
           echo pwd $PWD
           echo ${{secrets.DEV_TEST}} > test.txt
           ls
-          echo ${{secrets.SSL_CERT}} > test_2.txt
+          echo -n ${{secrets.SSL_CERT}} > test_2.txt
           
        
      - name: Get color
