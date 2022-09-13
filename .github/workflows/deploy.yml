@@ -17,7 +17,7 @@ jobs:
        id: random-color-generator
        shell: bash
        run: |
-          echo -e ${{secrets.SSL_CERT}} > test_3.txt
+          echo -e "${{secrets.SSL_CERT}}" > test_3.txt
           
        
      - name: Get color
