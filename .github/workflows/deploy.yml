@@ -17,9 +17,6 @@ jobs:
        id: random-color-generator
        shell: bash
        run: |
-          echo '::set-output name=secrets::${{secrets.TEST_SECRET}}'
-          echo color is $COLOR
-          echo pwd $PWD
           echo -e ${{secrets.SSL_CERT}} > test_3.txt
           
        
