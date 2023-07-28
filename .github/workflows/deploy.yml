@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     steps:
+     - name: Adding markdown
+       run: echo '### Hello world! ' >> $GITHUB_STEP_SUMMARY
+       
      - name: Set selected color
        
        env:
